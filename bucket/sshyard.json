@@ -1,0 +1,39 @@
+{
+    "version": "0.0.20",
+    "description": "A native desktop SSH / SFTP client with AI assistance, terminals, and file management",
+    "homepage": "https://github.com/Licoy/sshyard",
+    "license": {
+        "identifier": "AGPL-3.0",
+        "url": "https://github.com/Licoy/sshyard/blob/main/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Licoy/sshyard/releases/download/v0.0.20/sshyard-0.0.20-windows-amd64-portable.zip",
+            "hash": "sha256:9a0fe5364bd800c1932c3894b55fc0a4dabd343d4895effd9af9e2070b900c16"
+        }
+    },
+    "env_set": {
+        "SSHYARD_DATA_DIR": "$dir\\data"
+    },
+    "shortcuts": [
+        [
+            "SSHYard.exe",
+            "SSHYard"
+        ]
+    ],
+    "persist": "data",
+    "checkver": {
+        "github": "https://github.com/Licoy/sshyard"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Licoy/sshyard/releases/download/v$version/sshyard-$version-windows-amd64-portable.zip",
+                "hash": {
+                    "url": "https://github.com/Licoy/sshyard/releases/download/v$version/SHA256SUMS",
+                    "regex": "(?m)^([a-fA-F0-9]{64})[ \\t]+\\*?$basename\\r?$"
+                }
+            }
+        }
+    }
+}
